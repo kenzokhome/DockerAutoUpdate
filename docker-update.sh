@@ -11,7 +11,7 @@ if [ -f "$FILE" ];
 fi
 
 DIUN=docker ps --format {{.Names}} | grep "diun" | sed "s/:.*//g"
-docker exec $DIUN diun image list >> ~/Scripts/dockerList.txt
+docker exec $DIUN diun image list >> ~/Scripts/dockerContainersList.txt
 
 CURRENTDIR=$(pwd)
 cd $DIR
