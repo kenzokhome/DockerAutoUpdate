@@ -29,9 +29,7 @@ for d in */ ; do
 #			localElement=$(echo "${array[0]}" | sed "s/:.*//g")
 			localElement=$(echo "$element" | sed "s/:.*//g")
 			LATEST=$(cat $FILE | grep $localElement | sed "s/.*sha256://g" | sed -e 's/ //g' | sed -e 's/|//g');
-			#fa80af32a7c61128ffda667344547805b3c5e7721ecbbafd70e35bb7bb7c989f
 			DIGEST=$(docker inspect --format='{{index .RepoDigests 0}}' $element | sed "s/.*://g");
-			#fa80af32a7c61128ffda667344547805b3c5e7721ecbbafd70e35bb7bb7c989f
 			if [[ $LATEST == $DIGEST ]];
 				then
 					echo "$element doesn't require updating. Skipping!"
