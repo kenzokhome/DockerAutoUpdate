@@ -22,7 +22,7 @@ for d in */ ; do
 	cd $d
 	d2=${d::-1}
 	update_required=true
-	IMAGES=$(cat docker-compose.yml | grep image | sed -e 's/image: //g' | sed -e 's/'"'"'//g');
+	IMAGES=$(cat docker-compose.yml | grep "image:" | sed -e 's/image: //g' | sed -e 's/'"'"'//g' | sed -e 's/\"//g');
 	IFS=' ' read -r -a array <<< "$IMAGES"
 	for element in "${array[@]}"
 		do
