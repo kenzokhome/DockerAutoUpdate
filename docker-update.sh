@@ -23,7 +23,8 @@ for d in */ ; do
 	d2=${d::-1}
 	update_required=true
 	IMAGES=$(cat docker-compose.yml | grep "image:" | sed -e 's/image: //g' | sed -e 's/'"'"'//g' | sed -e 's/\"//g');
-	IFS=' ' read -r -a array <<< "$IMAGES"
+	array=($IMAGES)
+#	IFS=' ' read -r -a array <<< "$IMAGES"
 	for element in "${array[@]}"
 		do
 #			localElement=$(echo "${array[0]}" | sed "s/:.*//g")
