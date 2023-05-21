@@ -1,11 +1,11 @@
 #!/bin/bash
 
 DIR=put/your/dockercompose/path/here
-FILE=~/Scripts/dockerList.txt
+FILE=~/Scripts/dockerContainersList.txt
 
 if [ -f "$FILE" ]; 
 	then
-		rm -R ~/Scripts/dockerList.txt
+		rm -R ~/Scripts/dockerContainersList.txt
 	else
 		mkdir ~/Scripts
 fi
